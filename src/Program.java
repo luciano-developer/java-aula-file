@@ -10,21 +10,12 @@ public class Program {
 		System.out.println("Entre com o caminho da pasta: ");
 		String pathname = sc.next();
 		
-		File path = new File(pathname);
+		File file = new File(pathname);
 		
-		File[] folders = path.listFiles(File::isDirectory);
-		for (File folder : folders) {
-			System.out.println(folder);
-		}	
-	
-		File[] files = path.listFiles(File::isFile);
-		for (File file : files) {
-			System.out.println(file);
-		}
-		
-		boolean success = new File(path + "\\subdir").mkdir();
-		System.out.println("DIRETORIO CRIADO COM SUCESSO:" + success);
-		
+		System.out.println(file.getName());
+		System.out.println(file.getParent());
+		System.out.println(file.getPath());
+
 		sc.close();
 	}
 
